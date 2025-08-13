@@ -18,6 +18,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from home import views
+
 urlpatterns = [
     path("admin/", admin.site.urls),
+    path("home", views.home), # /home goes to urls.py(here) and takes the corresponding view(method home) and it'll then send the response)
+    path("home2", views.home2)
 ]

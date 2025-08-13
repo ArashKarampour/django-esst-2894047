@@ -1,5 +1,34 @@
 // creating a new django project with the name NAME_OF_PROJECT in current folder . :
 django-admin startproject NAME_OF_PROJECT .
 
+in our case for example :
+django-admin startproject smartnotes .
+
+smartnotes is our main app with all the project settings
+
 // running a server to start the app:
 python manage.py runserver
+
+// Django Project can consist of multiple apps:
+for example the starting app was smartnotes (with all main settings of the project)
+to add other apps use this command:
+
+django-admin startapp NAME_OF_APP
+
+for example:
+django-admin startapp home
+
+then we have to add the new app in the main app settings file:
+under the INSTALLED_APPS variable add the name of the new app:
+like this 'home'
+
+the request, response process in Django:
+
+if someone requests /home paht it'll go to urls.py and takes the corresponding view(method home) and it'll then send the response)
+
+// Django MVT framework (pattern):
+
+Model (database)
+View (kinde of api controller)
+Template (html,css)
+
