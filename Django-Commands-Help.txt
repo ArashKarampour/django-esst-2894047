@@ -1,0 +1,5 @@
+// creating a new django project with the name NAME_OF_PROJECT in current folder . :
+django-admin startproject NAME_OF_PROJECT .
+
+// running a server to start the app:
+python manage.py runserver
