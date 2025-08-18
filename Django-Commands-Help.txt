@@ -35,3 +35,12 @@ Template (html,css)
 // Minimum working page:
 // In each app for creating templates we must create a templates folder (it must be templates with s! :)) and that we make by convention another folder with the name of the app for example home
 // and then in views.py we use the render function (instead of HttpResponse) to send the template with it's data inside it or an empty data to show the html page
+
+// In order for the /admin path to work for authentication and authorization we have to use this command (also you can see it in red warning inside the terminal):
+python manage.py migrate
+// after that we have to create a superuser:
+python manage.py createsuperuser
+(for example with Username admin and password admin)
+you can login with it and manage users and groups
+
+// for activation the authorization on a template(view method) we use the auth decorator for login_required on the method (see views.py in home)
