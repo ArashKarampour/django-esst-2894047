@@ -16,12 +16,14 @@ Including another URLconf
 """
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 from home import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("home", views.home), # /home goes to urls.py(here) and takes the corresponding view(method home) and it'll then send the response)
-    path("home2", views.home2)
+    # path("home", views.home), # /home goes to urls.py(here) and takes the corresponding view(method home) and it'll then send the response)
+    # path("home2", views.home2)
+    path("", include("home.urls")),  # Include the home app's URLs (writing urls like this help more modularity)
+
 ]

@@ -32,3 +32,6 @@ Model (database)
 View (kinde of api controller)
 Template (html,css)
 
+// Minimum working page:
+// In each app for creating templates we must create a templates folder (it must be templates with s! :)) and that we make by convention another folder with the name of the app for example home
+// and then in views.py we use the render function (instead of HttpResponse) to send the template with it's data inside it or an empty data to show the html page
