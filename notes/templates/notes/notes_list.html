@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>notes</title>
+</head>
+<body>
+    <h1>These are the notes: </h1>
+    <ul>
+        {% if notes|length < 3 %}
+            <li>Notes length is less than 3</li>    
+        {% else %}
+            {% for note in notes %}
+                <li>{{note.title}}</li>
+                
+            {% endfor %}
+        {% endif %}
+    </ul>
+</body>
+</html>

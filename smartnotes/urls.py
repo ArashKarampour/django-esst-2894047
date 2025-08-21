@@ -25,5 +25,6 @@ urlpatterns = [
     # path("home", views.home), # /home goes to urls.py(here) and takes the corresponding view(method home) and it'll then send the response)
     # path("home2", views.home2)
     path("", include("home.urls")),  # Include the home app's URLs (writing urls like this help more modularity)
+    path("smart/", include("notes.urls")),  # Include the notes app's URLs
 
 ]
