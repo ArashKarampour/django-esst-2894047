@@ -44,3 +44,36 @@ python manage.py createsuperuser
 you can login with it and manage users and groups
 
 // for activation the authorization on a template(view method) we use the auth decorator for login_required on the method (see views.py in home)
+
+3- Database in Django (models)
+// Django ORM = Django Object Relational Mapping : for converting classes to tables and the classes attributes to coloumns
+// a- create the class in the models.py of the app (see notes app for example)
+// b- use command : python manage.py makemigrations : this will set the set of instructions we need in migrations folder of the app for converting them into a table
+// c- apply migrations: python manage.py migrate
+
+// note: after each change in the models.py class we have to apply the above steps for the database to take effect
+// Adding the table in admin panel:
+
+// a- go to the admin.py of the app and create a class with admin.ModelAdmin inheritation
+// b- register the model's class in models.py of the app to the new class to be displayed via admin (see admin.py of the notes app)
+
+// Quering data in database using Django shell (we can also use python files):
+// run : python manage.py shell
+
+// example:
+from notes.models import Notes
+mynote = Notes.objects.get(pk='1') # pk stands for primary key (id's are auto incremented starting from 1 and created by default), if we delete an object they'll continue adding up
+print(mynote.title)
+
+// we can query all of the notes by using .all() and then convert the QuerySet into a list and get their data
+all_notes = list(Notes.objects.all())
+all_notes[0].title
+
+// we can also use filters:
+Notes.objects.filter(title__startswith="second") # this will also return a Queryset
+Notes.objects.filter(title__icontains="note")
+// the opposite of filter is .exclude, which will return the objects, that doesn't have the property we give it
+Notes.objects.exclude(title__icontains="second")
+
+// we can also chain to make complex queries
+Notes.objects.filter(text__icontains="note").exclude(title__icontains="second")
