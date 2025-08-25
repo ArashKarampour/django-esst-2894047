@@ -80,6 +80,11 @@ Notes.objects.filter(text__icontains="note").exclude(title__icontains="second")
 
 // see django models fields : https://docs.djangoproject.com/en/5.2/ref/models/fields/
 
+4- Bulding dynamic web pages
+
 // Django template language : see https://docs.djangoproject.com/en/5.2/ref/templates/language/
 
 // for adding url parameters see views.py note_detail and urls.py for it also see (URL dispatcher) :  https://docs.djangoproject.com/en/5.2/topics/http/urls/
+
+// Class Based Views:
+// instead of using functions and returning the response with the template's name and data and request we use classes with a kind of structure
