@@ -81,3 +81,5 @@ Notes.objects.filter(text__icontains="note").exclude(title__icontains="second")
 // see django models fields : https://docs.djangoproject.com/en/5.2/ref/models/fields/
 
 // Django template language : see https://docs.djangoproject.com/en/5.2/ref/templates/language/
+
+// for adding url parameters see views.py note_detail and urls.py for it also see (URL dispatcher) :  https://docs.djangoproject.com/en/5.2/topics/http/urls/
