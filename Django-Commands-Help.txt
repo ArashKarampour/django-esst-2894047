@@ -93,5 +93,5 @@ Notes.objects.filter(text__icontains="note").exclude(title__icontains="second")
 // see home for TemplateView and notes for ListView and DetailView (views.py and urls.py files)
 
 // using templates with static files and styles and extending html files and using urls and etc. in part 5 (not so useful in modern web implementation with frontend frameworks)
-
 // using django forms and form validations in django part 6 (again not useful in modern websites with frontend frameworks) -> see part 6 in notes views.py with CreateView and urls.py
+// part 7 Django update and delete using Django forms (again not useful in modern websites with frontend frameworks)
