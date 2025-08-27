@@ -88,3 +88,6 @@ Notes.objects.filter(text__icontains="note").exclude(title__icontains="second")
 
 // Class Based Views:
 // instead of using functions and returning the response with the template's name and data and request we use classes with a kind of structure
+// other than the django documentation a good website intrduced for class based views in django is https://ccbv.co.uk/ (a very good resource)
+// in nutshell we use TemplateView for showing a template, ListView when also we want to use models and DetailView also when we have query parameters in the url
+// see home for TemplateView and notes for ListView and DetailView (views.py and urls.py files)
