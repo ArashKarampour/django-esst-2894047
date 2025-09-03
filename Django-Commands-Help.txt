@@ -92,6 +92,18 @@ Notes.objects.filter(text__icontains="note").exclude(title__icontains="second")
 // in nutshell we use TemplateView for showing a template, ListView when also we want to use models and DetailView also when we have query parameters in the url
 // see home for TemplateView and notes for ListView and DetailView (views.py and urls.py files)
 
-// using templates with static files and styles and extending html files and using urls and etc. in part 5 (not so useful in modern web implementation with frontend frameworks)
-// using django forms and form validations in django part 6 (again not useful in modern websites with frontend frameworks) -> see part 6 in notes views.py with CreateView and urls.py
-// part 7 Django update and delete using Django forms (again not useful in modern websites with frontend frameworks)
+// using templates with static files and styles and extending html files and using urls and etc. in part 5 (not so useful in modern web implementation with frontend frameworks see branch 5.)
+// using django forms and form validations in django part 6 (again not useful in modern websites with frontend frameworks) -> see part 6(branch 6.) in notes views.py with CreateView and urls.py
+// part 7 Django update and delete using Django forms (again not useful in modern websites with frontend frameworks see branch 7.)
+
+// Part 8 :
+// showing user specific data(notes in this project):
+// 1- creating a forign key in notes model from the user:
+    importing the User model created by default by django
+    using the User model to create the ForignKey : see models.py from notes
+    do: python manage.py makemigrations (and set the 1 as the default user (admin) in django)
+    then : python manage.py migrate
+// 2- adding the authentication to the NotesListView method of the notes/views.py
+ and also overriding the get_queryset method in /notes/views.py to just show the notes for the logedin user
+// 3- updating the CreateView to consider the logedin user as the author of the node to solve the on submit error using the form_valid method (see branch 8.3)
+//challenge: adding is_public attribute to the Notes model and updating the views and template(see 8.4 challenge) same like the add_like_view method previously

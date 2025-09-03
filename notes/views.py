@@ -1,14 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponseNotFound, Http404
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .models import Notes
 # Create your views here.
 
-class NotesListView(ListView): # class based view using ListView for using a model
+class NotesListView(LoginRequiredMixin , ListView): # class based view using ListView for using a model
     model = Notes
     context_object_name = 'notes'
     template_name = 'notes/notes_list.html'
+    login_url = '/admin'
+    
+    def get_queryset(self): # this is the method to override the default queryset to filter the notes based on the logged in user: see ccbv website for more details: https://ccbv.co.uk/projects/Django/5.2/django.views.generic.list/ListView/#get_queryset
+        return self.request.user.notes.all() # to show only the notes of the logged in user (we can access the user from the request object in this method)
 
 # def notes_list(request):
 #     notes_all = Notes.objects.all()
